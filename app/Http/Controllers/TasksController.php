@@ -1,25 +1,22 @@
-<?php 
+<?php
 
 /**
-*
-* Server Side Form Validation: 19.07
-*/
+ *
+ * Server Side Form Validation: 19.07
+ */
 
 namespace App\Http\Controllers;
- 
+
+use App\Http\Controllers\Controller;
 use App\Project;
 use App\Task;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
- 
 use Illuminate\Http\Request;
-
 use Input;
 use Redirect;
 
 class TasksController extends Controller {
- 
- 	protected $rules = [
+
+	protected $rules = [
 		'name' => ['required', 'min:3'],
 		'slug' => ['required'],
 		'description' => ['required'],
@@ -31,22 +28,20 @@ class TasksController extends Controller {
 	 * @param  \App\Project $project
 	 * @return Response
 	 */
-	public function index(Project $project)
-	{
+	public function index(Project $project) {
 		return view('tasks.index', compact('project'));
 	}
- 
+
 	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @param  \App\Project $project
 	 * @return Response
 	 */
-	public function create(Project $project)
-	{
+	public function create(Project $project) {
 		return view('tasks.create', compact('project'));
 	}
- 
+
 	/**
 	 * Store a newly created resource in storage.
 	 *
@@ -54,18 +49,17 @@ class TasksController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function store(Project $project, Request $request)
-	{
+	public function store(Project $project, Request $request) {
 		$this->validate($request, $this->rules);
 
 		$input = Input::all();
 		$input['project_id'] = $project->id;
-		Task::create( $input );
-	 
+		Task::create($input);
+
 		return Redirect::route('projects.show', $project->slug)->with('message', 'Task created.');
 
 	}
- 
+
 	/**
 	 * Display the specified resource.
 	 *
@@ -73,11 +67,10 @@ class TasksController extends Controller {
 	 * @param  \App\Task    $task
 	 * @return Response
 	 */
-	public function show(Project $project, Task $task)
-	{
+	public function show(Project $project, Task $task) {
 		return view('tasks.show', compact('project', 'task'));
 	}
- 
+
 	/**
 	 * Show the form for editing the specified resource.
 	 *
@@ -85,11 +78,10 @@ class TasksController extends Controller {
 	 * @param  \App\Task    $task
 	 * @return Response
 	 */
-	public function edit(Project $project, Task $task)
-	{
+	public function edit(Project $project, Task $task) {
 		return view('tasks.edit', compact('project', 'task'));
 	}
- 
+
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -98,16 +90,15 @@ class TasksController extends Controller {
 	 * @param \Illuminate\Http\Request $request
 	 * @return Response
 	 */
-	public function update(Project $project, Task $task, Request $request)
-	{
+	public function update(Project $project, Task $task, Request $request) {
 		$this->validate($request, $this->rules);
 
 		$input = array_except(Input::all(), '_method');
 		$task->update($input);
-	 
-		return Redirect::route('projects.tasks.show', [$project->slug, $task->slug])->with('message', 'Task updated.');		//
+
+		return Redirect::route('projects.tasks.show', [$project->slug, $task->slug])->with('message', 'Task updated.'); //
 	}
- 
+
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -115,13 +106,10 @@ class TasksController extends Controller {
 	 * @param  \App\Task    $task
 	 * @return Response
 	 */
-	public function destroy(Project $project, Task $task)
-	{
+	public function destroy(Project $project, Task $task) {
 		$task->delete();
- 
-		return Redirect::route('projects.show', $project->slug)->with('message', 'Task deleted.');	
+
+		return Redirect::route('projects.show', $project->slug)->with('message', 'Task deleted.');
 	}
- 
+
 }
-
-
