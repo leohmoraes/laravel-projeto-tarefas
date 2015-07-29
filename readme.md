@@ -1,5 +1,5 @@
 ## Baseado no Tutorial
-[![Link Tutorial](https://www.flynsarmy.com/2015/02/creating-a-basic-todo-application-in-laravel-5-part-1/)]
+[Link Tutorial](https://www.flynsarmy.com/2015/02/creating-a-basic-todo-application-in-laravel-5-part-1/)
 
 ## Laravel PHP Framework
 
