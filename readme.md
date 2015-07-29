@@ -1,23 +1,40 @@
-## Baseado no Tutorial
-[Link Tutorial](https://www.flynsarmy.com/2015/02/creating-a-basic-todo-application-in-laravel-5-part-1/)
+### Siga o Tutorial
+[Faça esta aplicação em 5 pequenas partes](https://www.flynsarmy.com/2015/02/creating-a-basic-todo-application-in-laravel-5-part-1/)
 
-Comandos usados neste tutorial
->laravel new laravel-todo
-ou 
->composer create-project laravel/laravel laravel-todo 5.0 --prefer-dist
->cd laravel-todo
->php artisan migrate:status
->php artisan make:migration create_projects_and_tasks_tables --create=“projects
->composer dump-autoload
->php artisan db:seed
->php artisan make:model Project
->php artisan make:model Task
->php artisan tinker
-  > App\Project::count();
-  > App\Task::count();
->php artisan make:controller ProjectsController
->php artisan make:controller TasksController
->php artisan route:list
+Comandos do terminal usados neste tutorial
+
+laravel new laravel-todo
+
+ou
+
+composer create-project laravel/laravel laravel-todo 5.0 --prefer-dist
+
+-------
+cd laravel-todo
+
+php artisan migrate:status
+
+php artisan make:migration create_projects_and_tasks_tables --create=“projects
+
+composer dump-autoload
+
+php artisan db:seed
+
+php artisan make:model Project
+
+php artisan make:model Task
+
+    php artisan tinker
+     App\Project::count();
+     App\Task::count();
+
+php artisan make:controller ProjectsController
+
+php artisan make:controller TasksController
+
+php artisan route:list
+
+--------
 
 ## Laravel PHP Framework
 
@@ -27,18 +44,12 @@ ou
 [![Latest Unstable Version](https://poser.pugx.org/laravel/framework/v/unstable.svg)](https://packagist.org/packages/laravel/framework)
 [![License](https://poser.pugx.org/laravel/framework/license.svg)](https://packagist.org/packages/laravel/framework)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, queueing, and caching.
+Laravel é um framework web em PHP, gratuito, com rápido aprendizado, estruturado, modularizado, independente, reaproveitável. Possui autenticação, rotas, sessão, fila e cache. Trabalha com scripts de banco para atualização das modificações ocorridas durante o desenvolvimento e o framework ainda pode trabalhar com testes unitários (TDD).
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-## Official Documentation
+## Documentação oficial
 
-Documentation for the framework can be found on the [Laravel website](http://laravel.com/docs).
+Visite [Laravel website](http://laravel.com/docs).
+Visite também [Laravel BR](http://laravel.com.br)
+Faça parte de uma comunidade [Laravel BR Slack](http://laravel-br.slack.com)
 
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
