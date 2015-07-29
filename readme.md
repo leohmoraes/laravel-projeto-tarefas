@@ -1,6 +1,24 @@
 ## Baseado no Tutorial
 [Link Tutorial](https://www.flynsarmy.com/2015/02/creating-a-basic-todo-application-in-laravel-5-part-1/)
 
+Comandos usados neste tutorial
+>laravel new laravel-todo
+ou 
+>composer create-project laravel/laravel laravel-todo 5.0 --prefer-dist
+>cd laravel-todo
+>php artisan migrate:status
+>php artisan make:migration create_projects_and_tasks_tables --create=“projects
+>composer dump-autoload
+>php artisan db:seed
+>php artisan make:model Project
+>php artisan make:model Task
+>php artisan tinker
+  > App\Project::count();
+  > App\Task::count();
+>php artisan make:controller ProjectsController
+>php artisan make:controller TasksController
+>php artisan route:list
+
 ## Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
